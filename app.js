@@ -4,7 +4,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const app = express();
 const admin = require('./firebaseAdmin');
-const PORT = 6000;
+const PORT = 5000;
 
 const allowedOrigins = [
     'http://localhost:3000',
@@ -46,7 +46,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 // Routes
-app.use('/api', require('./routes/paymentRoute'));
+app.use('/api', require('./routes/mailRoute'));
 
 // Middleware to verify session cookies
 app.use(async (req, res, next) => {
@@ -58,7 +58,7 @@ app.use(async (req, res, next) => {
     } catch (error) {
         res.status(401).send('Unauthorized');
     }
-});
+}); 
 
 // Start server
 app.listen(PORT, () => {
