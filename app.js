@@ -13,7 +13,8 @@ const allowedOrigins = [
     'https://trafy-blogclone-865611889264.us-central1.run.app',
     'https://trafy.ai',
     'https://blog.trafy.ai',
-    'https://trafy-newbackend-255821839155.us-central1.run.app'
+    'https://trafy-newbackend-255821839155.us-central1.run.app',
+    'https://script.google.com/macros/s/AKfycbz1SFjut9u2HtS3B2NAvBjdlegBgMH5yauwav-qkc4mqeutq4Tn31y4g09nmCv6P1JAEg/exec',
 ];
 
 const corsOptions = {

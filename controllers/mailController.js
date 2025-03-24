@@ -44,10 +44,10 @@ const sendNewsletterWelcomeEmail = async (req, res) => {
             return res.status(400).json({ success: false, msg: 'Email is required.' });
         }
 
-        const subject = "🎉 Welcome to the Trafy AI Newsletter!";
+        const subject = "Welcome to the Trafy AI Newsletter!";
         const htmlContent = `
-            <div style="font-family: 'DM Sans', sans-serif; max-width: 600px; margin: auto; padding: 20px; border-radius: 10px; background-color: #ffffff; border: 1px solid #ddd;">
-                <div style="text-align: center; margin-bottom: 20px;">
+            <div style="font-family: 'DM Sans', sans-serif; max-width: 600px; margin: auto; padding: 20px;padding-top:"0px" border-radius: 10px; background-color: #ffffff; border: 1px solid #ddd;">
+                <div style="text-align: center; margin-bottom: 20px;background-color:white;padding:20px 0px">
                     <img src="https://firebasestorage.googleapis.com/v0/b/testing-f9c8c.appspot.com/o/trafy-b-logo.png?alt=media&token=397f432c-8f74-4f3e-932e-0d13b229af6a" alt="Trafy AI" width="100" />
                 </div>
                 <h2 style="color: #02020A; text-align: center;">🎉 Welcome to Trafy AI!</h2>
@@ -58,7 +58,7 @@ const sendNewsletterWelcomeEmail = async (req, res) => {
                     Stay ahead with expert tips, industry news, and exclusive content crafted just for you.
                 </p>
                 <div style="text-align: center; margin-top: 20px;">
-                    <a href="https://trafy.ai" style="background: #02020A; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 5px; font-size: 16px; display: inline-block;">
+                    <a href="https://trafy.ai/research" style="background: #02020A; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 5px; font-size: 16px; display: inline-block;">
                         Visit Our Blog
                     </a>
                 </div>
