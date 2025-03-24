@@ -58,7 +58,7 @@ const sendNewsletterWelcomeEmail = async (req, res) => {
                     Stay ahead with expert tips, industry news, and exclusive content crafted just for you.
                 </p>
                 <div style="text-align: center; margin-top: 20px;">
-                    <a href="https://trafy.ai/research" style="background: #02020A; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 5px; font-size: 16px; display: inline-block;">
+                    <a href="https://trafy.ai/research/evolve-intelligence-transmutable-resilient-ai" style="background: #02020A; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 5px; font-size: 16px; display: inline-block;">
                         Visit Our Blog
                     </a>
                 </div>
