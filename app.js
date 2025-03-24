@@ -4,7 +4,6 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const app = express();
 const admin = require('./firebaseAdmin');
-const PORT = 5000;
 
 const allowedOrigins = [
     'http://localhost:3000',
@@ -42,15 +41,14 @@ app.options('*', (req, res) => {
     res.sendStatus(204);
 });
 
-
 app.use(cookieParser());
 app.use(express.json());
 
 // Routes
 app.use('/api', require('./routes/mailRoute'));
 
-// Middleware to verify session cookies
-app.use(async (req, res, next) => {
+// Middleware to verify session cookies - Make this optional for endpoints that don't need auth
+app.use('/protected/*', async (req, res, next) => {
     const sessionCookie = req.cookies.session || '';
     try {
         const decodedClaims = await admin.auth().verifySessionCookie(sessionCookie, true);
@@ -61,7 +59,13 @@ app.use(async (req, res, next) => {
     }
 }); 
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// Only use this for local development
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+}
+
+// This is needed for Vercel
+module.exports = app;
