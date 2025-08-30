@@ -59,13 +59,14 @@ app.use('/protected/*', async (req, res, next) => {
     }
 }); 
 
-// Only use this for local development
-if (process.env.NODE_ENV !== 'production') {
+// Only start the server if this file is run directly (local dev)
+// In production, server.js will start it
+if (require.main === module) {
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+        console.log(`Server running locally on port ${PORT}`);
     });
 }
 
-// This is needed for Vercel
+// Export app for server.js (and tests if needed)
 module.exports = app;
